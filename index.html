@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Video</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 100;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    background-size: cover;
+  }
+</style>
+</head>
+<body>
+<video id="background-video"  >
+  <source src="web.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var video = document.getElementById('background-video');
+
+  function playVideo() {
+    if (video.paused) {
+      video.play();
+    }
+  }
+
+  document.addEventListener('click', playVideo);
+  document.addEventListener('keydown', playVideo);
+});
+</script>
+</body>
+</html>
